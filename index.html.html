@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gửi Brief Thiết Kế — Justin Phó</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #141410;
+    --white: #FAFAF7;
+    --gray-1: #F2F0EB;
+    --gray-2: #E0DDD6;
+    --gray-3: #B0ADA6;
+    --gray-4: #6E6C67;
+    --accent: #2C2C2A;
+    --purple: #534AB7;
+    --purple-light: #EEEDFE;
+    --purple-dark: #3C3489;
+    --green: #0F6E56;
+    --green-light: #E1F5EE;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--white);
+    border-bottom: 0.5px solid var(--gray-2);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px; font-style: italic;
+    color: var(--black); text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    font-size: 12px; letter-spacing: 0.5px;
+    color: var(--gray-4); text-decoration: none;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--black); }
+  .nav-cta {
+    font-size: 12px; font-weight: 500;
+    padding: 7px 18px; border-radius: 20px;
+    background: var(--black); color: var(--white);
+    text-decoration: none; transition: background 0.15s;
+  }
+  .nav-cta:hover { background: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 860px; margin: 0 auto;
+    padding: 6rem 2rem 5rem;
+    border-bottom: 0.5px solid var(--gray-2);
+  }
+  .hero-eyebrow {
+    font-size: 10px; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--gray-4);
+    margin-bottom: 1.5rem;
+  }
+  .hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.1; letter-spacing: -1px;
+    color: var(--black); margin-bottom: 1.5rem;
+  }
+  .hero-title em { font-style: italic; color: var(--gray-4); }
+  .hero-sub {
+    font-size: 16px; color: var(--gray-4);
+    font-weight: 300; max-width: 520px;
+    line-height: 1.7; margin-bottom: 2.5rem;
+  }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    padding: 12px 28px; border-radius: 30px;
+    background: var(--black); color: var(--white);
+    font-size: 13px; font-weight: 500;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.15s; font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-outline {
+    padding: 12px 28px; border-radius: 30px;
+    background: transparent; color: var(--black);
+    font-size: 13px; font-weight: 500;
+    text-decoration: none;
+    border: 0.5px solid var(--gray-3); cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-outline:hover { border-color: var(--black); background: var(--gray-1); }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    padding-top: 2rem; border-top: 0.5px solid var(--gray-2);
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px; color: var(--black);
+  }
+  .stat-lbl { font-size: 11px; color: var(--gray-4); margin-top: 2px; }
+
+  /* ── SERVICES ── */
+  .services { max-width: 860px; margin: 0 auto; padding: 5rem 2rem; }
+  .section-label {
+    font-size: 10px; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--gray-4);
+    margin-bottom: 2rem; display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 0.5px; background: var(--gray-2); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; border: 0.5px solid var(--gray-2); }
+  .svc-card {
+    padding: 1.5rem; background: var(--white);
+    border: none; transition: background 0.15s;
+  }
+  .svc-card:hover { background: var(--gray-1); }
+  .svc-icon { font-size: 20px; color: var(--gray-3); margin-bottom: 0.75rem; }
+  .svc-name { font-weight: 500; font-size: 14px; color: var(--black); margin-bottom: 4px; }
+  .svc-desc { font-size: 12px; color: var(--gray-4); font-weight: 300; line-height: 1.55; }
+  .svc-price { font-size: 12px; color: var(--purple); font-weight: 500; margin-top: 8px; }
+
+  /* ── PRICING TABLE ── */
+  .pricing { max-width: 860px; margin: 0 auto; padding: 0 2rem 5rem; }
+  .pricing-table { width: 100%; border-collapse: collapse; }
+  .pricing-table thead th {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gray-4); font-weight: 500;
+    padding: 10px 12px; text-align: left;
+    border-bottom: 0.5px solid var(--gray-2);
+  }
+  .pricing-table thead th:not(:first-child) { text-align: right; }
+  .pricing-table tbody tr { border-bottom: 0.5px solid var(--gray-2); transition: background 0.12s; }
+  .pricing-table tbody tr:hover { background: var(--gray-1); }
+  .pricing-table td { padding: 12px 12px; vertical-align: middle; }
+  .pt-name { font-size: 14px; font-weight: 500; color: var(--black); }
+  .pt-cat {
+    display: inline-block; font-size: 9px; letter-spacing: 1px;
+    text-transform: uppercase; padding: 2px 7px; border-radius: 20px;
+    margin-left: 7px; font-weight: 500;
+  }
+  .cat-print { background: #EEEDFE; color: #3C3489; }
+  .cat-digital { background: #E6F1FB; color: #0C447C; }
+  .cat-deck { background: #FAEEDA; color: #633806; }
+  .cat-brand { background: #FBEAF0; color: #72243E; }
+  .pt-time { font-size: 12px; color: var(--gray-4); text-align: right; white-space: nowrap; }
+  .pt-price { font-size: 14px; font-weight: 500; color: var(--black); text-align: right; white-space: nowrap; }
+  .pt-note { font-size: 11px; color: var(--gray-4); font-style: italic; padding: 8px 12px; }
+
+  /* ── BRIEF FORM ── */
+  .brief { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
+  .brief-inner {
+    border: 0.5px solid var(--gray-2);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .brief-header {
+    background: var(--black); color: var(--white);
+    padding: 2rem 2rem 1.5rem;
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .brief-header-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px; font-style: italic;
+  }
+  .brief-header-sub { font-size: 11px; color: var(--gray-3); margin-top: 4px; }
+  .brief-header-steps { font-size: 11px; color: var(--gray-3); text-align: right; }
+  .brief-body { padding: 2rem; background: var(--white); }
+  .progress-track {
+    height: 2px; background: var(--gray-2);
+    border-radius: 2px; margin-bottom: 2rem; overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%; background: var(--black);
+    border-radius: 2px; transition: width 0.35s ease;
+  }
+  .step-tabs {
+    display: flex; gap: 0; margin-bottom: 2rem;
+    border-bottom: 0.5px solid var(--gray-2);
+  }
+  .stab {
+    flex: 1; padding: 8px 4px;
+    font-size: 11px; font-weight: 500; color: var(--gray-3);
+    background: transparent; border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer; text-align: center;
+    transition: color 0.15s, border-color 0.15s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .stab.active { color: var(--black); border-bottom: 2px solid var(--black); }
+  .stab.done { color: var(--gray-4); }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .field { margin-bottom: 1.25rem; }
+  .flbl {
+    display: block; font-size: 11px; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--gray-4);
+    font-weight: 500; margin-bottom: 6px;
+  }
+  .fsub { font-size: 11px; color: var(--gray-3); margin-bottom: 6px; font-weight: 300; }
+  input[type=text], input[type=email], textarea, select {
+    width: 100%; padding: 10px 12px;
+    border: 0.5px solid var(--gray-2);
+    border-radius: 4px; font-size: 13px;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white); color: var(--black);
+    transition: border-color 0.15s; outline: none;
+  }
+  input[type=text]:focus, input[type=email]:focus,
+  textarea:focus, select:focus { border-color: var(--black); }
+  textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .chip-group { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip {
+    padding: 6px 13px; border-radius: 20px;
+    border: 0.5px solid var(--gray-2);
+    font-size: 12px; color: var(--gray-4);
+    cursor: pointer; background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.12s; user-select: none;
+  }
+  .chip.sel { background: var(--black); color: var(--white); border-color: var(--black); }
+  .chip:hover:not(.sel) { background: var(--gray-1); border-color: var(--gray-3); }
+  .nav-row {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 2rem; padding-top: 1.25rem;
+    border-top: 0.5px solid var(--gray-2);
+  }
+  .nav-back-btn {
+    font-size: 12px; color: var(--gray-4);
+    background: transparent; border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; padding: 8px 0;
+    transition: color 0.15s;
+  }
+  .nav-back-btn:hover { color: var(--black); }
+  .nav-next-btn {
+    font-size: 12px; font-weight: 500; color: var(--white);
+    padding: 10px 24px; border-radius: 20px;
+    background: var(--black); border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.15s;
+  }
+  .nav-next-btn:hover { background: var(--accent); }
+  .nav-next-btn.accent { background: var(--purple); }
+  .nav-next-btn.accent:hover { background: var(--purple-dark); }
+
+  /* summary */
+  .sum-card {
+    background: var(--gray-1); border-radius: 4px;
+    padding: 1.25rem; margin-bottom: 1rem;
+  }
+  .sum-row {
+    display: flex; justify-content: space-between;
+    padding: 6px 0; border-bottom: 0.5px solid var(--gray-2);
+    font-size: 13px; gap: 16px;
+  }
+  .sum-row:last-child { border-bottom: none; }
+  .sum-lbl { color: var(--gray-4); flex-shrink: 0; font-size: 12px; }
+  .sum-val { color: var(--black); font-weight: 500; text-align: right; }
+  .est-row {
+    background: var(--black); color: var(--white);
+    border-radius: 4px; padding: 1rem 1.25rem;
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 1.25rem;
+  }
+  .est-lbl { font-size: 12px; color: var(--gray-3); }
+  .est-val { font-size: 20px; font-weight: 500; }
+
+  /* success state */
+  .success-box {
+    text-align: center; padding: 3rem 1rem; display: none;
+  }
+  .success-icon { font-size: 40px; margin-bottom: 1rem; }
+  .success-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px; margin-bottom: 0.5rem;
+  }
+  .success-sub { font-size: 13px; color: var(--gray-4); margin-bottom: 2rem; font-weight: 300; }
+  .copy-block {
+    background: var(--gray-1); border-radius: 4px;
+    padding: 1.25rem; text-align: left; margin-bottom: 1rem;
+    font-size: 12px; color: var(--gray-4); line-height: 1.8;
+    white-space: pre-wrap; word-break: break-word;
+  }
+  .copy-btn {
+    width: 100%; padding: 12px; border-radius: 4px;
+    background: var(--black); color: var(--white);
+    font-size: 13px; font-weight: 500; border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif; margin-bottom: 8px;
+    transition: background 0.15s;
+  }
+  .copy-btn:hover { background: var(--accent); }
+  .zalo-btn {
+    width: 100%; padding: 12px; border-radius: 4px;
+    background: transparent; color: var(--black);
+    font-size: 13px; font-weight: 500;
+    border: 0.5px solid var(--gray-2); cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.15s;
+  }
+  .zalo-btn:hover { background: var(--gray-1); }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 0.5px solid var(--gray-2);
+    padding: 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    max-width: 860px; margin: 0 auto;
+    font-size: 12px; color: var(--gray-4);
+  }
+  footer a { color: var(--gray-4); text-decoration: none; }
+  footer a:hover { color: var(--black); }
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px; font-style: italic; color: var(--black);
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 3rem 1.25rem 3rem; }
+    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+    .services, .pricing, .brief { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .row2 { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .brief-body { padding: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Justin Phó</a>
+  <div class="nav-links">
+    <a href="#services">Dịch vụ</a>
+    <a href="#pricing">Bảng giá</a>
+    <a href="#brief">Gửi brief</a>
+  </div>
+  <a href="#brief" class="nav-cta">Bắt đầu dự án →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">Brand Visual Designer · Biên Hòa, Việt Nam</div>
+  <h1 class="hero-title">
+    Thiết kế không chỉ đẹp —<br>
+    mà còn phải <em>hiệu quả.</em>
+  </h1>
+  <p class="hero-sub">
+    Mỗi dự án là một bài toán kinh doanh cần được giải quyết bằng hình ảnh.
+    Từ brand identity đến social media visual — tất cả đều hướng đến kết quả đo được.
+  </p>
+  <div class="hero-actions">
+    <a href="#brief" class="btn-primary">Gửi brief ngay</a>
+    <a href="#pricing" class="btn-outline">Xem bảng giá</a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">5+</div>
+      <div class="stat-lbl">Năm kinh nghiệm</div>
+    </div>
+    <div>
+      <div class="stat-num">100+</div>
+      <div class="stat-lbl">Dự án hoàn thành</div>
+    </div>
+    <div>
+      <div class="stat-num">48h</div>
+      <div class="stat-lbl">Thời gian phản hồi</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-label">Dịch vụ</div>
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-name">Brand Identity</div>
+      <div class="svc-desc">Logo, bộ nhận diện, brand guidelines — xây dựng thương hiệu nhất quán từ gốc.</div>
+      <div class="svc-price">Từ 3.000.000đ</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-name">Print Design</div>
+      <div class="svc-desc">Poster, menu, brochure, packaging — thiết kế in ấn chuyên nghiệp.</div>
+      <div class="svc-price">Từ 600.000đ</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-name">Social Media Visual</div>
+      <div class="svc-desc">Post đơn lẻ hoặc hệ thống template đa nền tảng — nhất quán và scalable.</div>
+      <div class="svc-price">Từ 400.000đ</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-name">Pitch Deck & Profile</div>
+      <div class="svc-desc">Presentation, company profile — truyền đạt giá trị thương hiệu đến đúng người.</div>
+      <div class="svc-price">Từ 3.500.000đ</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-label">Bảng giá tham khảo</div>
+  <table class="pricing-table">
+    <thead>
+      <tr>
+        <th style="width:55%">Hạng mục</th>
+        <th>Thời gian</th>
+        <th>Giá từ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="pt-name">Poster / Banner</span><span class="pt-cat cat-print">Print</span></td><td class="pt-time">2–3 ngày</td><td class="pt-price">800.000đ</td></tr>
+      <tr><td><span class="pt-name">Menu nhà hàng</span><span class="pt-cat cat-print">Print</span></td><td class="pt-time">3–5 ngày</td><td class="pt-price">1.500.000đ</td></tr>
+      <tr><td><span class="pt-name">Brochure / Catalogue</span><span class="pt-cat cat-print">Print</span></td><td class="pt-time">5–7 ngày</td><td class="pt-price">2.500.000đ</td></tr>
+      <tr><td><span class="pt-name">Namecard / Stationery</span><span class="pt-cat cat-print">Print</span></td><td class="pt-time">2–3 ngày</td><td class="pt-price">600.000đ</td></tr>
+      <tr><td><span class="pt-name">Packaging Design</span><span class="pt-cat cat-print">Print</span></td><td class="pt-time">5–8 ngày</td><td class="pt-price">3.000.000đ</td></tr>
+      <tr><td><span class="pt-name">Post Social Media</span><span class="pt-cat cat-digital">Digital</span></td><td class="pt-time">1–2 ngày</td><td class="pt-price">400.000đ</td></tr>
+      <tr><td><span class="pt-name">Social Media Package (10 post)</span><span class="pt-cat cat-digital">Digital</span></td><td class="pt-time">5–7 ngày</td><td class="pt-price">3.000.000đ</td></tr>
+      <tr><td><span class="pt-name">Banner Quảng Cáo Digital</span><span class="pt-cat cat-digital">Digital</span></td><td class="pt-time">2–3 ngày</td><td class="pt-price">1.200.000đ</td></tr>
+      <tr><td><span class="pt-name">Infographic</span><span class="pt-cat cat-digital">Digital</span></td><td class="pt-time">3–4 ngày</td><td class="pt-price">1.800.000đ</td></tr>
+      <tr><td><span class="pt-name">Pitch Deck / Presentation</span><span class="pt-cat cat-deck">Deck</span></td><td class="pt-time">4–6 ngày</td><td class="pt-price">3.500.000đ</td></tr>
+      <tr><td><span class="pt-name">Company Profile</span><span class="pt-cat cat-deck">Deck</span></td><td class="pt-time">5–7 ngày</td><td class="pt-price">4.500.000đ</td></tr>
+      <tr><td><span class="pt-name">Thiết kế Logo</span><span class="pt-cat cat-brand">Branding</span></td><td class="pt-time">5–7 ngày</td><td class="pt-price">3.000.000đ</td></tr>
+      <tr><td><span class="pt-name">Bộ nhận diện thương hiệu</span><span class="pt-cat cat-brand">Branding</span></td><td class="pt-time">10–15 ngày</td><td class="pt-price">8.000.000đ</td></tr>
+      <tr><td colspan="3" class="pt-note">* Giá trên là mức tham khảo. Dự án phức tạp hoặc rush delivery sẽ báo giá riêng. Giá chưa bao gồm VAT.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- BRIEF FORM -->
+<section class="brief" id="brief">
+  <div class="section-label">Gửi brief dự án</div>
+  <div class="brief-inner">
+    <div class="brief-header">
+      <div>
+        <div class="brief-header-title">Bắt đầu dự án của bạn</div>
+        <div class="brief-header-sub">Điền thông tin để nhận báo giá chính xác trong vòng 24 giờ</div>
+      </div>
+      <div class="brief-header-steps">4 bước · ~3 phút</div>
+    </div>
+    <div class="brief-body">
+      <div class="progress-track">
+        <div class="progress-fill" id="pbar" style="width:25%"></div>
+      </div>
+      <div class="step-tabs">
+        <button class="stab active" id="t1">1. Hạng mục</button>
+        <button class="stab" id="t2">2. Thương hiệu</button>
+        <button class="stab" id="t3">3. Yêu cầu</button>
+        <button class="stab" id="t4">4. Xác nhận</button>
+      </div>
+
+      <!-- STEP 1 -->
+      <div class="panel active" id="p1">
+        <div class="field">
+          <span class="flbl">Loại dịch vụ cần thiết kế</span>
+          <span class="fsub">Có thể chọn nhiều hạng mục</span>
+          <div class="chip-group" id="g-service">
+            <div class="chip" onclick="toggleChip(this)">Poster / Banner</div>
+            <div class="chip" onclick="toggleChip(this)">Menu nhà hàng</div>
+            <div class="chip" onclick="toggleChip(this)">Social Media Post</div>
+            <div class="chip" onclick="toggleChip(this)">Social Media Package</div>
+            <div class="chip" onclick="toggleChip(this)">Banner Quảng Cáo</div>
+            <div class="chip" onclick="toggleChip(this)">Brochure / Catalogue</div>
+            <div class="chip" onclick="toggleChip(this)">Pitch Deck</div>
+            <div class="chip" onclick="toggleChip(this)">Company Profile</div>
+            <div class="chip" onclick="toggleChip(this)">Logo</div>
+            <div class="chip" onclick="toggleChip(this)">Bộ nhận diện</div>
+            <div class="chip" onclick="toggleChip(this)">Packaging</div>
+            <div class="chip" onclick="toggleChip(this)">Infographic</div>
+            <div class="chip" onclick="toggleChip(this)">Namecard</div>
+            <div class="chip" onclick="toggleChip(this)">Khác</div>
+          </div>
+        </div>
+        <div class="field">
+          <span class="flbl">Mục đích sử dụng</span>
+          <div class="chip-group" id="g-purpose">
+            <div class="chip" onclick="toggleChip(this)">Quảng cáo / Marketing</div>
+            <div class="chip" onclick="toggleChip(this)">Sự kiện / Event</div>
+            <div class="chip" onclick="toggleChip(this)">Ra mắt sản phẩm</div>
+            <div class="chip" onclick="toggleChip(this)">Nhận diện thương hiệu</div>
+            <div class="chip" onclick="toggleChip(this)">Nội bộ công ty</div>
+            <div class="chip" onclick="toggleChip(this)">Pitching / Gọi vốn</div>
+          </div>
+        </div>
+        <div class="nav-row">
+          <span></span>
+          <button class="nav-next-btn" onclick="goStep(2)">Tiếp theo →</button>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="panel" id="p2">
+        <div class="row2">
+          <div class="field">
+            <label class="flbl" for="brand-name">Tên thương hiệu / dự án</label>
+            <input type="text" id="brand-name" placeholder="Ví dụ: Cafe Sài Gòn...">
+          </div>
+          <div class="field">
+            <label class="flbl" for="industry">Ngành hàng</label>
+            <input type="text" id="industry" placeholder="F&B, thời trang, tech...">
+          </div>
+        </div>
+        <div class="field">
+          <label class="flbl" for="brand-desc">Mô tả ngắn về thương hiệu</label>
+          <span class="fsub">Đối tượng khách hàng, định vị, tính cách thương hiệu</span>
+          <textarea id="brand-desc" placeholder="Ví dụ: Thương hiệu café phong cách Nhật Bản, target 22–35 tuổi, yêu sự tối giản..."></textarea>
+        </div>
+        <div class="field">
+          <span class="flbl">Đã có bộ nhận diện thương hiệu chưa?</span>
+          <div class="chip-group" id="g-brand">
+            <div class="chip" onclick="toggleSingle(this,'g-brand')">Có đầy đủ (logo, màu, font)</div>
+            <div class="chip" onclick="toggleSingle(this,'g-brand')">Có logo, chưa có guideline</div>
+            <div class="chip" onclick="toggleSingle(this,'g-brand')">Chưa có gì</div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="flbl" for="contact">Thông tin liên hệ</label>
+          <input type="text" id="contact" placeholder="Số Zalo / Email của bạn">
+        </div>
+        <div class="nav-row">
+          <button class="nav-back-btn" onclick="goStep(1)">← Quay lại</button>
+          <button class="nav-next-btn" onclick="goStep(3)">Tiếp theo →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="panel" id="p3">
+        <div class="row2">
+          <div class="field">
+            <label class="flbl" for="quantity">Số lượng / Khối lượng</label>
+            <input type="text" id="quantity" placeholder="1 poster, bộ 10 post...">
+          </div>
+          <div class="field">
+            <label class="flbl" for="deadline">Deadline mong muốn</label>
+            <input type="text" id="deadline" placeholder="30/06, trong 1 tuần...">
+          </div>
+        </div>
+        <div class="field">
+          <span class="flbl">Mức độ gấp</span>
+          <div class="chip-group" id="g-urgent">
+            <div class="chip" onclick="toggleSingle(this,'g-urgent')">Bình thường</div>
+            <div class="chip" onclick="toggleSingle(this,'g-urgent')">Hơi gấp</div>
+            <div class="chip" onclick="toggleSingle(this,'g-urgent')">Rất gấp (rush)</div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="flbl" for="ref">Phong cách / Tham khảo</label>
+          <span class="fsub">Link, tên thương hiệu hoặc mô tả visual bạn thích</span>
+          <textarea id="ref" placeholder="Ví dụ: Phong cách tối giản như Apple, màu ấm như Kinfolk magazine..."></textarea>
+        </div>
+        <div class="field">
+          <label class="flbl" for="note">Ghi chú thêm</label>
+          <textarea id="note" placeholder="Nội dung cần đưa vào, yêu cầu đặc biệt, format file cần xuất..."></textarea>
+        </div>
+        <div class="nav-row">
+          <button class="nav-back-btn" onclick="goStep(2)">← Quay lại</button>
+          <button class="nav-next-btn" onclick="goStep(4)">Xem tóm tắt →</button>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="panel" id="p4">
+        <div class="sum-card" id="sum-content"></div>
+        <div class="est-row">
+          <div>
+            <div class="est-lbl">Ước tính báo giá</div>
+            <div style="font-size:11px;color:#888;margin-top:2px">Xác nhận chính xác trong 24 giờ</div>
+          </div>
+          <div class="est-val" id="est-price">—</div>
+        </div>
+        <div class="nav-row">
+          <button class="nav-back-btn" onclick="goStep(3)">← Chỉnh sửa</button>
+          <button class="nav-next-btn accent" onclick="submitBrief()">Gửi Brief →</button>
+        </div>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="success-box" id="success">
+        <div class="success-icon">✓</div>
+        <div class="success-title">Brief đã sẵn sàng!</div>
+        <div class="success-sub">Copy nội dung bên dưới và gửi qua Zalo / Email cho Justin.</div>
+        <div class="copy-block" id="brief-text"></div>
+        <button class="copy-btn" onclick="copyBrief()">Sao chép nội dung</button>
+        <button class="zalo-btn" onclick="sendZalo()">Mở Zalo để gửi</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Justin Phó</div>
+  <div>Brand Visual Designer · Biên Hòa, VN</div>
+  <div>© 2025</div>
+</footer>
+
+<script>
+  const priceMap = {
+    'Poster / Banner':'800.000đ','Menu nhà hàng':'1.500.000đ',
+    'Social Media Post':'400.000đ','Social Media Package':'3.000.000đ',
+    'Banner Quảng Cáo':'1.200.000đ','Brochure / Catalogue':'2.500.000đ',
+    'Pitch Deck':'3.500.000đ','Company Profile':'4.500.000đ',
+    'Logo':'3.000.000đ','Bộ nhận diện':'8.000.000đ',
+    'Packaging':'3.000.000đ','Infographic':'1.800.000đ','Namecard':'600.000đ'
+  };
+
+  function toggleChip(el){ el.classList.toggle('sel'); }
+  function toggleSingle(el, gid){
+    document.getElementById(gid).querySelectorAll('.chip').forEach(c => c.classList.remove('sel'));
+    el.classList.add('sel');
+  }
+  function getChips(id){
+    const sel = [...document.getElementById(id).querySelectorAll('.chip.sel')].map(c=>c.textContent);
+    return sel.length ? sel.join(', ') : '—';
+  }
+  function v(id){ return document.getElementById(id).value.trim() || '—'; }
+
+  function goStep(n){
+    if(n===4) buildSummary();
+    [1,2,3,4].forEach(i => {
+      document.getElementById('p'+i).classList.toggle('active', i===n);
+      const t = document.getElementById('t'+i);
+      t.classList.toggle('active', i===n);
+      t.classList.toggle('done', i<n);
+    });
+    document.getElementById('pbar').style.width = (n*25)+'%';
+    document.getElementById('brief').scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function buildSummary(){
+    const svc = getChips('g-service');
+    const urg = getChips('g-urgent');
+    const rows = [
+      ['Hạng mục', svc],
+      ['Mục đích', getChips('g-purpose')],
+      ['Thương hiệu', v('brand-name')],
+      ['Ngành hàng', v('industry')],
+      ['Mô tả thương hiệu', v('brand-desc')],
+      ['Nhận diện hiện có', getChips('g-brand')],
+      ['Liên hệ', v('contact')],
+      ['Số lượng', v('quantity')],
+      ['Deadline', v('deadline')],
+      ['Mức độ gấp', urg],
+      ['Phong cách tham khảo', v('ref')],
+      ['Ghi chú', v('note')]
+    ];
+    document.getElementById('sum-content').innerHTML = rows.map(([l,val]) =>
+      `<div class="sum-row"><span class="sum-lbl">${l}</span><span class="sum-val">${val}</span></div>`
+    ).join('');
+    const selected = [...document.getElementById('g-service').querySelectorAll('.chip.sel')].map(c=>c.textContent);
+    let est = 'Liên hệ để báo giá';
+    if(selected.length===1 && priceMap[selected[0]]){
+      est = 'Từ ' + priceMap[selected[0]];
+      if(urg.includes('rush')) est += ' + phụ thu rush';
+    } else if(selected.length > 1){
+      est = 'Combo — báo giá riêng';
+    }
+    document.getElementById('est-price').textContent = est;
+  }
+
+  let briefContent = '';
+  function submitBrief(){
+    const svc = getChips('g-service');
+    const pur = getChips('g-purpose');
+    const brand = v('brand-name');
+    const industry = v('industry');
+    const bdesc = v('brand-desc');
+    const brandStatus = getChips('g-brand');
+    const contact = v('contact');
+    const qty = v('quantity');
+    const dl = v('deadline');
+    const urg = getChips('g-urgent');
+    const ref = v('ref');
+    const note = v('note');
+
+    briefContent = `BRIEF DỰ ÁN THIẾT KẾ
+${'─'.repeat(30)}
+H��ng mục: ${svc}
+Mục đích: ${pur}
+${'─'.repeat(30)}
+Thương hiệu: ${brand}
+Ngành hàng: ${industry}
+Mô tả: ${bdesc}
+Nhận diện hiện có: ${brandStatus}
+${'─'.repeat(30)}
+Số lượng: ${qty}
+Deadline: ${dl}
+Mức độ gấp: ${urg}
+Phong cách: ${ref}
+Ghi chú: ${note}
+${'─'.repeat(30)}
+Liên hệ: ${contact}`;
+
+    document.getElementById('brief-text').textContent = briefContent;
+    [1,2,3,4].forEach(i => {
+      document.getElementById('p'+i).style.display='none';
+      document.getElementById('t'+i).style.display='none';
+    });
+    document.getElementById('pbar').style.width='100%';
+    document.getElementById('success').style.display='block';
+  }
+
+  function copyBrief(){
+    navigator.clipboard.writeText(briefContent).then(()=>{
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = '✓ Đã sao chép!';
+      setTimeout(()=>{ btn.textContent = 'Sao chép nội dung'; }, 2000);
+    }).catch(()=>{
+      const ta = document.createElement('textarea');
+      ta.value = briefContent;
+      document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta);
+    });
+  }
+
+  function sendZalo(){
+    const encoded = encodeURIComponent(briefContent);
+    window.open('https://zalo.me/0000000000?text='+encoded, '_blank');
+  }
+</script>
+</body>
+</html>
