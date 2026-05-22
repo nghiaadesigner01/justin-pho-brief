@@ -1,736 +1,351 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gá»­i Brief Thiáº¿t Káº¿ â€” Justin PhÃ³</title>
+<title>Justin Pho - Brand Visual Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --black: #141410;
-    --white: #FAFAF7;
-    --gray-1: #F2F0EB;
-    --gray-2: #E0DDD6;
-    --gray-3: #B0ADA6;
-    --gray-4: #6E6C67;
-    --accent: #2C2C2A;
-    --purple: #534AB7;
-    --purple-light: #EEEDFE;
-    --purple-dark: #3C3489;
-    --green: #0F6E56;
-    --green-light: #E1F5EE;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--white);
-    color: var(--black);
-    font-size: 15px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Be Vietnam Pro',sans-serif;background:#FAFAF7;color:#141410;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
 
-  /* â”€â”€ NAV â”€â”€ */
-  nav {
-    position: sticky; top: 0; z-index: 100;
-    background: var(--white);
-    border-bottom: 0.5px solid var(--gray-2);
-    padding: 0 2rem;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 56px;
-  }
-  .nav-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 18px; font-style: italic;
-    color: var(--black); text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 2rem; }
-  .nav-links a {
-    font-size: 12px; letter-spacing: 0.5px;
-    color: var(--gray-4); text-decoration: none;
-    transition: color 0.15s;
-  }
-  .nav-links a:hover { color: var(--black); }
-  .nav-cta {
-    font-size: 12px; font-weight: 500;
-    padding: 7px 18px; border-radius: 20px;
-    background: var(--black); color: var(--white);
-    text-decoration: none; transition: background 0.15s;
-  }
-  .nav-cta:hover { background: var(--accent); }
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:#FAFAF7;border-bottom:1px solid #E0DDD6;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-size:17px;font-weight:600;color:#141410}.logo span{color:#E85D04}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:13px;color:#6E6C67;transition:color .15s}
+.nav-links a:hover{color:#E85D04}
+.nav-btn{font-size:12px;font-weight:500;padding:8px 18px;border-radius:30px;background:#E85D04;color:#fff;transition:background .15s}
+.nav-btn:hover{background:#C44D00}
 
-  /* â”€â”€ HERO â”€â”€ */
-  .hero {
-    max-width: 860px; margin: 0 auto;
-    padding: 6rem 2rem 5rem;
-    border-bottom: 0.5px solid var(--gray-2);
-  }
-  .hero-eyebrow {
-    font-size: 10px; letter-spacing: 4px;
-    text-transform: uppercase; color: var(--gray-4);
-    margin-bottom: 1.5rem;
-  }
-  .hero-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(38px, 6vw, 64px);
-    line-height: 1.1; letter-spacing: -1px;
-    color: var(--black); margin-bottom: 1.5rem;
-  }
-  .hero-title em { font-style: italic; color: var(--gray-4); }
-  .hero-sub {
-    font-size: 16px; color: var(--gray-4);
-    font-weight: 300; max-width: 520px;
-    line-height: 1.7; margin-bottom: 2.5rem;
-  }
-  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn-primary {
-    padding: 12px 28px; border-radius: 30px;
-    background: var(--black); color: var(--white);
-    font-size: 13px; font-weight: 500;
-    text-decoration: none; border: none; cursor: pointer;
-    transition: background 0.15s; font-family: 'DM Sans', sans-serif;
-  }
-  .btn-primary:hover { background: var(--accent); }
-  .btn-outline {
-    padding: 12px 28px; border-radius: 30px;
-    background: transparent; color: var(--black);
-    font-size: 13px; font-weight: 500;
-    text-decoration: none;
-    border: 0.5px solid var(--gray-3); cursor: pointer;
-    transition: border-color 0.15s, background 0.15s;
-    font-family: 'DM Sans', sans-serif;
-  }
-  .btn-outline:hover { border-color: var(--black); background: var(--gray-1); }
-  .hero-stats {
-    display: flex; gap: 3rem; margin-top: 4rem;
-    padding-top: 2rem; border-top: 0.5px solid var(--gray-2);
-  }
-  .stat-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 28px; color: var(--black);
-  }
-  .stat-lbl { font-size: 11px; color: var(--gray-4); margin-top: 2px; }
+/* HERO */
+.hero{max-width:820px;margin:0 auto;padding:5rem 2rem 4rem;border-bottom:1px solid #E0DDD6}
+.hero-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#B0ADA6;margin-bottom:1.5rem}
+.hero h1{font-size:52px;line-height:1.15;font-weight:600;letter-spacing:-1px;margin-bottom:1.5rem}
+.hero h1 em{font-style:italic;color:#E85D04}
+.hero p{font-size:16px;color:#6E6C67;font-weight:300;line-height:1.8;max-width:500px;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-orange{padding:12px 28px;border-radius:30px;background:#E85D04;color:#fff;font-size:13px;font-weight:500;border:none;cursor:pointer;transition:background .15s}
+.btn-orange:hover{background:#C44D00}
+.btn-outline{padding:12px 28px;border-radius:30px;background:transparent;color:#141410;font-size:13px;font-weight:500;border:1px solid #B0ADA6;cursor:pointer;transition:all .15s}
+.btn-outline:hover{border-color:#141410}
+.stats{display:flex;gap:3rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid #E0DDD6}
+.stat-num{font-size:28px;font-weight:600;color:#E85D04}
+.stat-lbl{font-size:12px;color:#B0ADA6;margin-top:3px}
 
-  /* â”€â”€ SERVICES â”€â”€ */
-  .services { max-width: 860px; margin: 0 auto; padding: 5rem 2rem; }
-  .section-label {
-    font-size: 10px; letter-spacing: 4px;
-    text-transform: uppercase; color: var(--gray-4);
-    margin-bottom: 2rem; display: flex; align-items: center; gap: 12px;
-  }
-  .section-label::after { content: ''; flex: 1; height: 0.5px; background: var(--gray-2); }
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; border: 0.5px solid var(--gray-2); }
-  .svc-card {
-    padding: 1.5rem; background: var(--white);
-    border: none; transition: background 0.15s;
-  }
-  .svc-card:hover { background: var(--gray-1); }
-  .svc-icon { font-size: 20px; color: var(--gray-3); margin-bottom: 0.75rem; }
-  .svc-name { font-weight: 500; font-size: 14px; color: var(--black); margin-bottom: 4px; }
-  .svc-desc { font-size: 12px; color: var(--gray-4); font-weight: 300; line-height: 1.55; }
-  .svc-price { font-size: 12px; color: var(--purple); font-weight: 500; margin-top: 8px; }
+/* SECTION */
+.section{max-width:820px;margin:0 auto;padding:4rem 2rem}
+.sec-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#B0ADA6;margin-bottom:2rem;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';flex:1;height:1px;background:#E0DDD6}
 
-  /* â”€â”€ PRICING TABLE â”€â”€ */
-  .pricing { max-width: 860px; margin: 0 auto; padding: 0 2rem 5rem; }
-  .pricing-table { width: 100%; border-collapse: collapse; }
-  .pricing-table thead th {
-    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--gray-4); font-weight: 500;
-    padding: 10px 12px; text-align: left;
-    border-bottom: 0.5px solid var(--gray-2);
-  }
-  .pricing-table thead th:not(:first-child) { text-align: right; }
-  .pricing-table tbody tr { border-bottom: 0.5px solid var(--gray-2); transition: background 0.12s; }
-  .pricing-table tbody tr:hover { background: var(--gray-1); }
-  .pricing-table td { padding: 12px 12px; vertical-align: middle; }
-  .pt-name { font-size: 14px; font-weight: 500; color: var(--black); }
-  .pt-cat {
-    display: inline-block; font-size: 9px; letter-spacing: 1px;
-    text-transform: uppercase; padding: 2px 7px; border-radius: 20px;
-    margin-left: 7px; font-weight: 500;
-  }
-  .cat-print { background: #EEEDFE; color: #3C3489; }
-  .cat-digital { background: #E6F1FB; color: #0C447C; }
-  .cat-deck { background: #FAEEDA; color: #633806; }
-  .cat-brand { background: #FBEAF0; color: #72243E; }
-  .pt-time { font-size: 12px; color: var(--gray-4); text-align: right; white-space: nowrap; }
-  .pt-price { font-size: 14px; font-weight: 500; color: var(--black); text-align: right; white-space: nowrap; }
-  .pt-note { font-size: 11px; color: var(--gray-4); font-style: italic; padding: 8px 12px; }
+/* SERVICES */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;border:1px solid #E0DDD6}
+.svc-card{padding:1.5rem;background:#FAFAF7;transition:background .15s}
+.svc-card:hover{background:#F2F0EB}
+.svc-card:hover .svc-name{color:#E85D04}
+.svc-name{font-size:14px;font-weight:500;margin-bottom:6px;transition:color .15s}
+.svc-desc{font-size:12px;color:#B0ADA6;line-height:1.6;font-weight:300}
+.svc-price{font-size:12px;color:#E85D04;font-weight:500;margin-top:8px}
 
-  /* â”€â”€ BRIEF FORM â”€â”€ */
-  .brief { max-width: 860px; margin: 0 auto; padding: 0 2rem 6rem; }
-  .brief-inner {
-    border: 0.5px solid var(--gray-2);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-  .brief-header {
-    background: var(--black); color: var(--white);
-    padding: 2rem 2rem 1.5rem;
-    display: flex; justify-content: space-between; align-items: flex-start;
-  }
-  .brief-header-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 24px; font-style: italic;
-  }
-  .brief-header-sub { font-size: 11px; color: var(--gray-3); margin-top: 4px; }
-  .brief-header-steps { font-size: 11px; color: var(--gray-3); text-align: right; }
-  .brief-body { padding: 2rem; background: var(--white); }
-  .progress-track {
-    height: 2px; background: var(--gray-2);
-    border-radius: 2px; margin-bottom: 2rem; overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%; background: var(--black);
-    border-radius: 2px; transition: width 0.35s ease;
-  }
-  .step-tabs {
-    display: flex; gap: 0; margin-bottom: 2rem;
-    border-bottom: 0.5px solid var(--gray-2);
-  }
-  .stab {
-    flex: 1; padding: 8px 4px;
-    font-size: 11px; font-weight: 500; color: var(--gray-3);
-    background: transparent; border: none;
-    border-bottom: 2px solid transparent;
-    cursor: pointer; text-align: center;
-    transition: color 0.15s, border-color 0.15s;
-    font-family: 'DM Sans', sans-serif;
-  }
-  .stab.active { color: var(--black); border-bottom: 2px solid var(--black); }
-  .stab.done { color: var(--gray-4); }
-  .panel { display: none; }
-  .panel.active { display: block; }
-  .field { margin-bottom: 1.25rem; }
-  .flbl {
-    display: block; font-size: 11px; letter-spacing: 1px;
-    text-transform: uppercase; color: var(--gray-4);
-    font-weight: 500; margin-bottom: 6px;
-  }
-  .fsub { font-size: 11px; color: var(--gray-3); margin-bottom: 6px; font-weight: 300; }
-  input[type=text], input[type=email], textarea, select {
-    width: 100%; padding: 10px 12px;
-    border: 0.5px solid var(--gray-2);
-    border-radius: 4px; font-size: 13px;
-    font-family: 'DM Sans', sans-serif;
-    background: var(--white); color: var(--black);
-    transition: border-color 0.15s; outline: none;
-  }
-  input[type=text]:focus, input[type=email]:focus,
-  textarea:focus, select:focus { border-color: var(--black); }
-  textarea { resize: vertical; min-height: 80px; line-height: 1.6; }
-  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .chip-group { display: flex; flex-wrap: wrap; gap: 7px; }
-  .chip {
-    padding: 6px 13px; border-radius: 20px;
-    border: 0.5px solid var(--gray-2);
-    font-size: 12px; color: var(--gray-4);
-    cursor: pointer; background: transparent;
-    font-family: 'DM Sans', sans-serif;
-    transition: all 0.12s; user-select: none;
-  }
-  .chip.sel { background: var(--black); color: var(--white); border-color: var(--black); }
-  .chip:hover:not(.sel) { background: var(--gray-1); border-color: var(--gray-3); }
-  .nav-row {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-top: 2rem; padding-top: 1.25rem;
-    border-top: 0.5px solid var(--gray-2);
-  }
-  .nav-back-btn {
-    font-size: 12px; color: var(--gray-4);
-    background: transparent; border: none; cursor: pointer;
-    font-family: 'DM Sans', sans-serif; padding: 8px 0;
-    transition: color 0.15s;
-  }
-  .nav-back-btn:hover { color: var(--black); }
-  .nav-next-btn {
-    font-size: 12px; font-weight: 500; color: var(--white);
-    padding: 10px 24px; border-radius: 20px;
-    background: var(--black); border: none; cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: background 0.15s;
-  }
-  .nav-next-btn:hover { background: var(--accent); }
-  .nav-next-btn.accent { background: var(--purple); }
-  .nav-next-btn.accent:hover { background: var(--purple-dark); }
+/* PRICING TABLE */
+.pricing{max-width:820px;margin:0 auto;padding:0 2rem 4rem}
+table{width:100%;border-collapse:collapse}
+thead th{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#B0ADA6;font-weight:500;padding:10px 12px;text-align:left;border-bottom:1px solid #E0DDD6}
+thead th:not(:first-child){text-align:right}
+tbody tr{border-bottom:1px solid #E0DDD6;transition:background .12s}
+tbody tr:hover{background:#F2F0EB}
+td{padding:12px;vertical-align:middle}
+.pt-name{font-size:14px;font-weight:500}
+.pt-cat{display:inline-block;font-size:9px;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px;margin-left:8px;font-weight:500}
+.c-print{background:#F2F0EB;color:#6E6C67}
+.c-digital{background:#FEF0E7;color:#C44D00}
+.c-deck{background:#E0DDD6;color:#141410}
+.c-brand{background:#141410;color:#fff}
+.pt-time{font-size:12px;color:#B0ADA6;text-align:right;white-space:nowrap}
+.pt-price{font-size:14px;font-weight:500;color:#E85D04;text-align:right;white-space:nowrap}
+.pt-note{font-size:11px;color:#B0ADA6;font-style:italic;padding:8px 12px}
 
-  /* summary */
-  .sum-card {
-    background: var(--gray-1); border-radius: 4px;
-    padding: 1.25rem; margin-bottom: 1rem;
-  }
-  .sum-row {
-    display: flex; justify-content: space-between;
-    padding: 6px 0; border-bottom: 0.5px solid var(--gray-2);
-    font-size: 13px; gap: 16px;
-  }
-  .sum-row:last-child { border-bottom: none; }
-  .sum-lbl { color: var(--gray-4); flex-shrink: 0; font-size: 12px; }
-  .sum-val { color: var(--black); font-weight: 500; text-align: right; }
-  .est-row {
-    background: var(--black); color: var(--white);
-    border-radius: 4px; padding: 1rem 1.25rem;
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 1.25rem;
-  }
-  .est-lbl { font-size: 12px; color: var(--gray-3); }
-  .est-val { font-size: 20px; font-weight: 500; }
+/* BRIEF FORM */
+.brief{max-width:820px;margin:0 auto;padding:0 2rem 5rem}
+.brief-box{border:1px solid #E0DDD6;border-radius:6px;overflow:hidden}
+.brief-hd{background:#141410;color:#fff;padding:2rem;display:flex;justify-content:space-between;align-items:flex-start}
+.brief-hd-title{font-size:22px;font-weight:500}.brief-hd-title span{color:#E85D04}
+.brief-hd-sub{font-size:12px;color:#888;margin-top:4px}
+.brief-hd-r{font-size:11px;color:#888;text-align:right}
+.brief-body{padding:2rem;background:#FAFAF7}
+.progress-wrap{height:2px;background:#E0DDD6;border-radius:2px;margin-bottom:2rem;overflow:hidden}
+.progress-bar{height:100%;background:#E85D04;border-radius:2px;transition:width .3s ease}
+.step-tabs{display:flex;border-bottom:1px solid #E0DDD6;margin-bottom:2rem}
+.stab{flex:1;padding:8px 4px;font-size:11px;font-weight:500;color:#B0ADA6;background:transparent;border:none;border-bottom:2px solid transparent;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;transition:color .15s,border-color .15s}
+.stab.active{color:#E85D04;border-bottom-color:#E85D04}
+.stab.done{color:#6E6C67}
+.panel{display:none}.panel.active{display:block}
+.field{margin-bottom:1.25rem}
+.flbl{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6E6C67;font-weight:500;margin-bottom:6px}
+.fsub{font-size:11px;color:#B0ADA6;margin-bottom:6px;font-weight:300}
+input[type=text],textarea{width:100%;padding:10px 12px;border:1px solid #E0DDD6;border-radius:4px;font-size:13px;font-family:'Be Vietnam Pro',sans-serif;background:#fff;color:#141410;outline:none;transition:border-color .15s}
+input[type=text]:focus,textarea:focus{border-color:#E85D04}
+textarea{resize:vertical;min-height:80px;line-height:1.6}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{padding:6px 13px;border-radius:20px;border:1px solid #E0DDD6;font-size:12px;color:#6E6C67;cursor:pointer;background:#fff;font-family:'Be Vietnam Pro',sans-serif;transition:all .12s;user-select:none}
+.chip.sel{background:#E85D04;color:#fff;border-color:#E85D04}
+.chip:hover:not(.sel){border-color:#E85D04;color:#E85D04}
+.nav-row{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid #E0DDD6}
+.back-btn{font-size:12px;color:#B0ADA6;background:transparent;border:none;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif}
+.back-btn:hover{color:#141410}
+.next-btn{font-size:12px;font-weight:500;color:#fff;padding:10px 24px;border-radius:20px;background:#E85D04;border:none;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;transition:background .15s}
+.next-btn:hover{background:#C44D00}
+.next-btn.dark{background:#141410}.next-btn.dark:hover{background:#333}
 
-  /* success state */
-  .success-box {
-    text-align: center; padding: 3rem 1rem; display: none;
-  }
-  .success-icon { font-size: 40px; margin-bottom: 1rem; }
-  .success-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 24px; margin-bottom: 0.5rem;
-  }
-  .success-sub { font-size: 13px; color: var(--gray-4); margin-bottom: 2rem; font-weight: 300; }
-  .copy-block {
-    background: var(--gray-1); border-radius: 4px;
-    padding: 1.25rem; text-align: left; margin-bottom: 1rem;
-    font-size: 12px; color: var(--gray-4); line-height: 1.8;
-    white-space: pre-wrap; word-break: break-word;
-  }
-  .copy-btn {
-    width: 100%; padding: 12px; border-radius: 4px;
-    background: var(--black); color: var(--white);
-    font-size: 13px; font-weight: 500; border: none; cursor: pointer;
-    font-family: 'DM Sans', sans-serif; margin-bottom: 8px;
-    transition: background 0.15s;
-  }
-  .copy-btn:hover { background: var(--accent); }
-  .zalo-btn {
-    width: 100%; padding: 12px; border-radius: 4px;
-    background: transparent; color: var(--black);
-    font-size: 13px; font-weight: 500;
-    border: 0.5px solid var(--gray-2); cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: background 0.15s;
-  }
-  .zalo-btn:hover { background: var(--gray-1); }
+/* SUMMARY */
+.sum-box{background:#F2F0EB;border-radius:4px;padding:1.25rem;margin-bottom:1rem}
+.sum-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #E0DDD6;font-size:13px;gap:16px}
+.sum-row:last-child{border:none}
+.sum-lbl{color:#B0ADA6;flex-shrink:0;font-size:12px}
+.sum-val{color:#141410;font-weight:500;text-align:right}
+.est-box{background:#141410;color:#fff;border-radius:4px;padding:1rem 1.25rem;display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.est-lbl{font-size:12px;color:#888}
+.est-val{font-size:20px;font-weight:600;color:#E85D04}
 
-  /* â”€â”€ FOOTER â”€â”€ */
-  footer {
-    border-top: 0.5px solid var(--gray-2);
-    padding: 2rem;
-    display: flex; justify-content: space-between; align-items: center;
-    max-width: 860px; margin: 0 auto;
-    font-size: 12px; color: var(--gray-4);
-  }
-  footer a { color: var(--gray-4); text-decoration: none; }
-  footer a:hover { color: var(--black); }
-  .footer-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 16px; font-style: italic; color: var(--black);
-  }
+/* SUCCESS */
+.success{text-align:center;padding:3rem 1rem;display:none}
+.success-icon{width:52px;height:52px;border-radius:50%;background:#E85D04;color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-weight:500}
+.success-title{font-size:22px;font-weight:600;margin-bottom:.5rem}
+.success-sub{font-size:13px;color:#B0ADA6;margin-bottom:2rem;font-weight:300}
+.copy-block{background:#F2F0EB;border-left:3px solid #E85D04;border-radius:4px;padding:1.25rem;text-align:left;margin-bottom:1rem;font-size:12px;color:#6E6C67;line-height:1.8;white-space:pre-wrap;word-break:break-word}
+.copy-btn{width:100%;padding:12px;border-radius:4px;background:#E85D04;color:#fff;font-size:13px;font-weight:500;border:none;cursor:pointer;font-family:'Be Vietnam Pro',sans-serif;margin-bottom:8px;transition:background .15s}
+.copy-btn:hover{background:#C44D00}
 
-  @media (max-width: 600px) {
-    .hero { padding: 3rem 1.25rem 3rem; }
-    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
-    .services, .pricing, .brief { padding-left: 1.25rem; padding-right: 1.25rem; }
-    .row2 { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-    .brief-body { padding: 1.25rem; }
-  }
+/* FOOTER */
+footer{border-top:1px solid #E0DDD6;padding:2rem;display:flex;justify-content:space-between;align-items:center;max-width:820px;margin:0 auto;font-size:12px;color:#B0ADA6;flex-wrap:wrap;gap:8px}
+.footer-logo{font-size:15px;font-weight:600;color:#141410}.footer-logo span{color:#E85D04}
+
+@media(max-width:600px){
+  .hero{padding:3rem 1.25rem}
+  .hero h1{font-size:34px}
+  .stats{gap:1.5rem;flex-wrap:wrap}
+  .section,.pricing,.brief{padding-left:1.25rem;padding-right:1.25rem}
+  .row2{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .brief-body{padding:1.25rem}
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">Justin PhÃ³</a>
+  <a href="#" class="logo">Justin <span>Pho</span></a>
   <div class="nav-links">
-    <a href="#services">Dá»‹ch vá»¥</a>
-    <a href="#pricing">Báº£ng giÃ¡</a>
-    <a href="#brief">Gá»­i brief</a>
+    <a href="#services">Dich vu</a>
+    <a href="#pricing">Bang gia</a>
+    <a href="#brief">Gui brief</a>
   </div>
-  <a href="#brief" class="nav-cta">Báº¯t Ä‘áº§u dá»± Ã¡n â†’</a>
+  <a href="#brief" class="nav-btn">Bat dau du an</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">Brand Visual Designer Â· BiÃªn HÃ²a, Viá»‡t Nam</div>
-  <h1 class="hero-title">
-    Thiáº¿t káº¿ khÃ´ng chá»‰ Ä‘áº¹p â€”<br>
-    mÃ  cÃ²n pháº£i <em>hiá»‡u quáº£.</em>
-  </h1>
-  <p class="hero-sub">
-    Má»—i dá»± Ã¡n lÃ  má»™t bÃ i toÃ¡n kinh doanh cáº§n Ä‘Æ°á»£c giáº£i quyáº¿t báº±ng hÃ¬nh áº£nh.
-    Tá»« brand identity Ä‘áº¿n social media visual â€” táº¥t cáº£ Ä‘á»u hÆ°á»›ng Ä‘áº¿n káº¿t quáº£ Ä‘o Ä‘Æ°á»£c.
-  </p>
-  <div class="hero-actions">
-    <a href="#brief" class="btn-primary">Gá»­i brief ngay</a>
-    <a href="#pricing" class="btn-outline">Xem báº£ng giÃ¡</a>
+  <div class="hero-tag">Brand Visual Designer &middot; Bien Hoa, Viet Nam</div>
+  <h1>Thiet ke khong chi dep &mdash;<br>ma con phai <em>hieu qua.</em></h1>
+  <p>Moi du an la mot bai toan kinh doanh can duoc giai quyet bang hinh anh. Tu brand identity den social media visual &mdash; tat ca huong den ket qua do duoc.</p>
+  <div class="hero-btns">
+    <a href="#brief" class="btn-orange">Gui brief ngay</a>
+    <a href="#pricing" class="btn-outline">Xem bang gia</a>
   </div>
-  <div class="hero-stats">
-    <div>
-      <div class="stat-num">5+</div>
-      <div class="stat-lbl">NÄƒm kinh nghiá»‡m</div>
-    </div>
-    <div>
-      <div class="stat-num">100+</div>
-      <div class="stat-lbl">Dá»± Ã¡n hoÃ n thÃ nh</div>
-    </div>
-    <div>
-      <div class="stat-num">48h</div>
-      <div class="stat-lbl">Thá»i gian pháº£n há»“i</div>
-    </div>
+  <div class="stats">
+    <div><div class="stat-num">5+</div><div class="stat-lbl">Nam kinh nghiem</div></div>
+    <div><div class="stat-num">100+</div><div class="stat-lbl">Du an hoan thanh</div></div>
+    <div><div class="stat-num">48h</div><div class="stat-lbl">Thoi gian phan hoi</div></div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="section-label">Dá»‹ch vá»¥</div>
-  <div class="services-grid">
-    <div class="svc-card">
-      <div class="svc-name">Brand Identity</div>
-      <div class="svc-desc">Logo, bá»™ nháº­n diá»‡n, brand guidelines â€” xÃ¢y dá»±ng thÆ°Æ¡ng hiá»‡u nháº¥t quÃ¡n tá»« gá»‘c.</div>
-      <div class="svc-price">Tá»« 3.000.000Ä‘</div>
-    </div>
-    <div class="svc-card">
-      <div class="svc-name">Print Design</div>
-      <div class="svc-desc">Poster, menu, brochure, packaging â€” thiáº¿t káº¿ in áº¥n chuyÃªn nghiá»‡p.</div>
-      <div class="svc-price">Tá»« 600.000Ä‘</div>
-    </div>
-    <div class="svc-card">
-      <div class="svc-name">Social Media Visual</div>
-      <div class="svc-desc">Post Ä‘Æ¡n láº» hoáº·c há»‡ thá»‘ng template Ä‘a ná»n táº£ng â€” nháº¥t quÃ¡n vÃ  scalable.</div>
-      <div class="svc-price">Tá»« 400.000Ä‘</div>
-    </div>
-    <div class="svc-card">
-      <div class="svc-name">Pitch Deck & Profile</div>
-      <div class="svc-desc">Presentation, company profile â€” truyá»n Ä‘áº¡t giÃ¡ trá»‹ thÆ°Æ¡ng hiá»‡u Ä‘áº¿n Ä‘Ãºng ngÆ°á»i.</div>
-      <div class="svc-price">Tá»« 3.500.000Ä‘</div>
-    </div>
+<section class="section" id="services">
+  <div class="sec-label">Dich vu</div>
+  <div class="svc-grid">
+    <div class="svc-card"><div class="svc-name">Brand Identity</div><div class="svc-desc">Logo, bo nhan dien, brand guidelines &mdash; xay dung thuong hieu nhat quan tu goc.</div><div class="svc-price">Tu 3.000.000d</div></div>
+    <div class="svc-card"><div class="svc-name">Print Design</div><div class="svc-desc">Poster, menu, brochure, packaging &mdash; thiet ke in an chuyen nghiep.</div><div class="svc-price">Tu 600.000d</div></div>
+    <div class="svc-card"><div class="svc-name">Social Media Visual</div><div class="svc-desc">Post don le hoac he thong template da nen tang &mdash; nhat quan va scalable.</div><div class="svc-price">Tu 400.000d</div></div>
+    <div class="svc-card"><div class="svc-name">Pitch Deck &amp; Profile</div><div class="svc-desc">Presentation, company profile &mdash; truyen dat gia tri thuong hieu den dung nguoi.</div><div class="svc-price">Tu 3.500.000d</div></div>
   </div>
 </section>
 
-<!-- PRICING -->
 <section class="pricing" id="pricing">
-  <div class="section-label">Báº£ng giÃ¡ tham kháº£o</div>
-  <table class="pricing-table">
-    <thead>
-      <tr>
-        <th style="width:55%">Háº¡ng má»¥c</th>
-        <th>Thá»i gian</th>
-        <th>GiÃ¡ tá»«</th>
-      </tr>
-    </thead>
+  <div class="sec-label" style="margin-bottom:2rem">Bang gia tham khao</div>
+  <table>
+    <thead><tr><th style="width:55%">Hang muc</th><th>Thoi gian</th><th>Gia tu</th></tr></thead>
     <tbody>
-      <tr><td><span class="pt-name">Poster / Banner</span><span class="pt-cat cat-print">Print</span></td><td class="pt-time">2â€“3 ngÃ y</td><td class="pt-price">800.000Ä‘</td></tr>
-      <tr><td><span class="pt-name">Menu nhÃ  hÃ ng</span><span class="pt-cat cat-print">Print</span></td><td class="pt-time">3â€“5 ngÃ y</td><td class="pt-price">1.500.000Ä‘</td></tr>
-      <tr><td><span class="pt-name">Brochure / Catalogue</span><span class="pt-cat cat-print">Print</span></td><td class="pt-time">5â€“7 ngÃ y</td><td class="pt-price">2.500.000Ä‘</td></tr>
-      <tr><td><span class="pt-name">Namecard / Stationery</span><span class="pt-cat cat-print">Print</span></td><td class="pt-time">2â€“3 ngÃ y</td><td class="pt-price">600.000Ä‘</td></tr>
-      <tr><td><span class="pt-name">Packaging Design</span><span class="pt-cat cat-print">Print</span></td><td class="pt-time">5â€“8 ngÃ y</td><td class="pt-price">3.000.000Ä‘</td></tr>
-      <tr><td><span class="pt-name">Post Social Media</span><span class="pt-cat cat-digital">Digital</span></td><td class="pt-time">1â€“2 ngÃ y</td><td class="pt-price">400.000Ä‘</td></tr>
-      <tr><td><span class="pt-name">Social Media Package (10 post)</span><span class="pt-cat cat-digital">Digital</span></td><td class="pt-time">5â€“7 ngÃ y</td><td class="pt-price">3.000.000Ä‘</td></tr>
-      <tr><td><span class="pt-name">Banner Quáº£ng CÃ¡o Digital</span><span class="pt-cat cat-digital">Digital</span></td><td class="pt-time">2â€“3 ngÃ y</td><td class="pt-price">1.200.000Ä‘</td></tr>
-      <tr><td><span class="pt-name">Infographic</span><span class="pt-cat cat-digital">Digital</span></td><td class="pt-time">3â€“4 ngÃ y</td><td class="pt-price">1.800.000Ä‘</td></tr>
-      <tr><td><span class="pt-name">Pitch Deck / Presentation</span><span class="pt-cat cat-deck">Deck</span></td><td class="pt-time">4â€“6 ngÃ y</td><td class="pt-price">3.500.000Ä‘</td></tr>
-      <tr><td><span class="pt-name">Company Profile</span><span class="pt-cat cat-deck">Deck</span></td><td class="pt-time">5â€“7 ngÃ y</td><td class="pt-price">4.500.000Ä‘</td></tr>
-      <tr><td><span class="pt-name">Thiáº¿t káº¿ Logo</span><span class="pt-cat cat-brand">Branding</span></td><td class="pt-time">5â€“7 ngÃ y</td><td class="pt-price">3.000.000Ä‘</td></tr>
-      <tr><td><span class="pt-name">Bá»™ nháº­n diá»‡n thÆ°Æ¡ng hiá»‡u</span><span class="pt-cat cat-brand">Branding</span></td><td class="pt-time">10â€“15 ngÃ y</td><td class="pt-price">8.000.000Ä‘</td></tr>
-      <tr><td colspan="3" class="pt-note">* GiÃ¡ trÃªn lÃ  má»©c tham kháº£o. Dá»± Ã¡n phá»©c táº¡p hoáº·c rush delivery sáº½ bÃ¡o giÃ¡ riÃªng. GiÃ¡ chÆ°a bao gá»“m VAT.</td></tr>
+      <tr><td><span class="pt-name">Poster / Banner</span><span class="pt-cat c-print">Print</span></td><td class="pt-time">2&ndash;3 ngay</td><td class="pt-price">800.000d</td></tr>
+      <tr><td><span class="pt-name">Menu nha hang</span><span class="pt-cat c-print">Print</span></td><td class="pt-time">3&ndash;5 ngay</td><td class="pt-price">1.500.000d</td></tr>
+      <tr><td><span class="pt-name">Brochure / Catalogue</span><span class="pt-cat c-print">Print</span></td><td class="pt-time">5&ndash;7 ngay</td><td class="pt-price">2.500.000d</td></tr>
+      <tr><td><span class="pt-name">Namecard / Stationery</span><span class="pt-cat c-print">Print</span></td><td class="pt-time">2&ndash;3 ngay</td><td class="pt-price">600.000d</td></tr>
+      <tr><td><span class="pt-name">Packaging Design</span><span class="pt-cat c-print">Print</span></td><td class="pt-time">5&ndash;8 ngay</td><td class="pt-price">3.000.000d</td></tr>
+      <tr><td><span class="pt-name">Post Social Media</span><span class="pt-cat c-digital">Digital</span></td><td class="pt-time">1&ndash;2 ngay</td><td class="pt-price">400.000d</td></tr>
+      <tr><td><span class="pt-name">Social Media Package (10 post)</span><span class="pt-cat c-digital">Digital</span></td><td class="pt-time">5&ndash;7 ngay</td><td class="pt-price">3.000.000d</td></tr>
+      <tr><td><span class="pt-name">Banner Quang Cao Digital</span><span class="pt-cat c-digital">Digital</span></td><td class="pt-time">2&ndash;3 ngay</td><td class="pt-price">1.200.000d</td></tr>
+      <tr><td><span class="pt-name">Infographic</span><span class="pt-cat c-digital">Digital</span></td><td class="pt-time">3&ndash;4 ngay</td><td class="pt-price">1.800.000d</td></tr>
+      <tr><td><span class="pt-name">Pitch Deck / Presentation</span><span class="pt-cat c-deck">Deck</span></td><td class="pt-time">4&ndash;6 ngay</td><td class="pt-price">3.500.000d</td></tr>
+      <tr><td><span class="pt-name">Company Profile</span><span class="pt-cat c-deck">Deck</span></td><td class="pt-time">5&ndash;7 ngay</td><td class="pt-price">4.500.000d</td></tr>
+      <tr><td><span class="pt-name">Thiet ke Logo</span><span class="pt-cat c-brand">Branding</span></td><td class="pt-time">5&ndash;7 ngay</td><td class="pt-price">3.000.000d</td></tr>
+      <tr><td><span class="pt-name">Bo nhan dien thuong hieu</span><span class="pt-cat c-brand">Branding</span></td><td class="pt-time">10&ndash;15 ngay</td><td class="pt-price">8.000.000d</td></tr>
+      <tr><td colspan="3" class="pt-note">* Gia tren la muc tham khao. Du an phuc tap hoac rush delivery se bao gia rieng. Chua bao gom VAT.</td></tr>
     </tbody>
   </table>
 </section>
 
-<!-- BRIEF FORM -->
 <section class="brief" id="brief">
-  <div class="section-label">Gá»­i brief dá»± Ã¡n</div>
-  <div class="brief-inner">
-    <div class="brief-header">
+  <div class="sec-label" style="margin-bottom:2rem">Gui brief du an</div>
+  <div class="brief-box">
+    <div class="brief-hd">
       <div>
-        <div class="brief-header-title">Báº¯t Ä‘áº§u dá»± Ã¡n cá»§a báº¡n</div>
-        <div class="brief-header-sub">Äiá»n thÃ´ng tin Ä‘á»ƒ nháº­n bÃ¡o giÃ¡ chÃ­nh xÃ¡c trong vÃ²ng 24 giá»</div>
+        <div class="brief-hd-title">Bat dau du an <span>cua ban</span></div>
+        <div class="brief-hd-sub">Dien thong tin de nhan bao gia chinh xac trong 24 gio</div>
       </div>
-      <div class="brief-header-steps">4 bÆ°á»›c Â· ~3 phÃºt</div>
+      <div class="brief-hd-r">4 buoc &middot; ~3 phut</div>
     </div>
     <div class="brief-body">
-      <div class="progress-track">
-        <div class="progress-fill" id="pbar" style="width:25%"></div>
-      </div>
+      <div class="progress-wrap"><div class="progress-bar" id="pbar" style="width:25%"></div></div>
       <div class="step-tabs">
-        <button class="stab active" id="t1">1. Háº¡ng má»¥c</button>
-        <button class="stab" id="t2">2. ThÆ°Æ¡ng hiá»‡u</button>
-        <button class="stab" id="t3">3. YÃªu cáº§u</button>
-        <button class="stab" id="t4">4. XÃ¡c nháº­n</button>
+        <button class="stab active" id="t1">1. Hang muc</button>
+        <button class="stab" id="t2">2. Thuong hieu</button>
+        <button class="stab" id="t3">3. Yeu cau</button>
+        <button class="stab" id="t4">4. Xac nhan</button>
       </div>
 
-      <!-- STEP 1 -->
       <div class="panel active" id="p1">
         <div class="field">
-          <span class="flbl">Loáº¡i dá»‹ch vá»¥ cáº§n thiáº¿t káº¿</span>
-          <span class="fsub">CÃ³ thá»ƒ chá»n nhiá»u háº¡ng má»¥c</span>
-          <div class="chip-group" id="g-service">
+          <span class="flbl">Loai dich vu</span>
+          <span class="fsub">Co the chon nhieu hang muc</span>
+          <div class="chips" id="g-service">
             <div class="chip" onclick="toggleChip(this)">Poster / Banner</div>
-            <div class="chip" onclick="toggleChip(this)">Menu nhÃ  hÃ ng</div>
+            <div class="chip" onclick="toggleChip(this)">Menu nha hang</div>
             <div class="chip" onclick="toggleChip(this)">Social Media Post</div>
             <div class="chip" onclick="toggleChip(this)">Social Media Package</div>
-            <div class="chip" onclick="toggleChip(this)">Banner Quáº£ng CÃ¡o</div>
+            <div class="chip" onclick="toggleChip(this)">Banner Quang Cao</div>
             <div class="chip" onclick="toggleChip(this)">Brochure / Catalogue</div>
             <div class="chip" onclick="toggleChip(this)">Pitch Deck</div>
             <div class="chip" onclick="toggleChip(this)">Company Profile</div>
             <div class="chip" onclick="toggleChip(this)">Logo</div>
-            <div class="chip" onclick="toggleChip(this)">Bá»™ nháº­n diá»‡n</div>
+            <div class="chip" onclick="toggleChip(this)">Bo nhan dien</div>
             <div class="chip" onclick="toggleChip(this)">Packaging</div>
             <div class="chip" onclick="toggleChip(this)">Infographic</div>
             <div class="chip" onclick="toggleChip(this)">Namecard</div>
-            <div class="chip" onclick="toggleChip(this)">KhÃ¡c</div>
+            <div class="chip" onclick="toggleChip(this)">Khac</div>
           </div>
         </div>
         <div class="field">
-          <span class="flbl">Má»¥c Ä‘Ã­ch sá»­ dá»¥ng</span>
-          <div class="chip-group" id="g-purpose">
-            <div class="chip" onclick="toggleChip(this)">Quáº£ng cÃ¡o / Marketing</div>
-            <div class="chip" onclick="toggleChip(this)">Sá»± kiá»‡n / Event</div>
-            <div class="chip" onclick="toggleChip(this)">Ra máº¯t sáº£n pháº©m</div>
-            <div class="chip" onclick="toggleChip(this)">Nháº­n diá»‡n thÆ°Æ¡ng hiá»‡u</div>
-            <div class="chip" onclick="toggleChip(this)">Ná»™i bá»™ cÃ´ng ty</div>
-            <div class="chip" onclick="toggleChip(this)">Pitching / Gá»i vá»‘n</div>
+          <span class="flbl">Muc dich su dung</span>
+          <div class="chips" id="g-purpose">
+            <div class="chip" onclick="toggleChip(this)">Quang cao / Marketing</div>
+            <div class="chip" onclick="toggleChip(this)">Su kien / Event</div>
+            <div class="chip" onclick="toggleChip(this)">Ra mat san pham</div>
+            <div class="chip" onclick="toggleChip(this)">Nhan dien thuong hieu</div>
+            <div class="chip" onclick="toggleChip(this)">Noi bo cong ty</div>
+            <div class="chip" onclick="toggleChip(this)">Pitching / Goi von</div>
           </div>
         </div>
-        <div class="nav-row">
-          <span></span>
-          <button class="nav-next-btn" onclick="goStep(2)">Tiáº¿p theo â†’</button>
-        </div>
+        <div class="nav-row"><span></span><button class="next-btn" onclick="goStep(2)">Tiep theo &rarr;</button></div>
       </div>
 
-      <!-- STEP 2 -->
       <div class="panel" id="p2">
         <div class="row2">
-          <div class="field">
-            <label class="flbl" for="brand-name">TÃªn thÆ°Æ¡ng hiá»‡u / dá»± Ã¡n</label>
-            <input type="text" id="brand-name" placeholder="VÃ­ dá»¥: Cafe SÃ i GÃ²n...">
-          </div>
-          <div class="field">
-            <label class="flbl" for="industry">NgÃ nh hÃ ng</label>
-            <input type="text" id="industry" placeholder="F&B, thá»i trang, tech...">
-          </div>
+          <div class="field"><label class="flbl">Ten thuong hieu</label><input type="text" id="brand-name" placeholder="Vi du: Cafe Sai Gon..."></div>
+          <div class="field"><label class="flbl">Nganh hang</label><input type="text" id="industry" placeholder="F&B, thoi trang, tech..."></div>
         </div>
+        <div class="field"><label class="flbl">Mo ta thuong hieu</label><span class="fsub">Doi tuong khach hang, dinh vi, tinh cach thuong hieu</span><textarea id="brand-desc" placeholder="Vi du: Thuong hieu cafe phong cach Nhat Ban, target 22-35 tuoi..."></textarea></div>
         <div class="field">
-          <label class="flbl" for="brand-desc">MÃ´ táº£ ngáº¯n vá» thÆ°Æ¡ng hiá»‡u</label>
-          <span class="fsub">Äá»‘i tÆ°á»£ng khÃ¡ch hÃ ng, Ä‘á»‹nh vá»‹, tÃ­nh cÃ¡ch thÆ°Æ¡ng hiá»‡u</span>
-          <textarea id="brand-desc" placeholder="VÃ­ dá»¥: ThÆ°Æ¡ng hiá»‡u cafÃ© phong cÃ¡ch Nháº­t Báº£n, target 22â€“35 tuá»•i, yÃªu sá»± tá»‘i giáº£n..."></textarea>
-        </div>
-        <div class="field">
-          <span class="flbl">ÄÃ£ cÃ³ bá»™ nháº­n diá»‡n thÆ°Æ¡ng hiá»‡u chÆ°a?</span>
-          <div class="chip-group" id="g-brand">
-            <div class="chip" onclick="toggleSingle(this,'g-brand')">CÃ³ Ä‘áº§y Ä‘á»§ (logo, mÃ u, font)</div>
-            <div class="chip" onclick="toggleSingle(this,'g-brand')">CÃ³ logo, chÆ°a cÃ³ guideline</div>
-            <div class="chip" onclick="toggleSingle(this,'g-brand')">ChÆ°a cÃ³ gÃ¬</div>
+          <span class="flbl">Da co bo nhan dien chua?</span>
+          <div class="chips" id="g-brand">
+            <div class="chip" onclick="toggleSingle(this,'g-brand')">Co day du (logo, mau, font)</div>
+            <div class="chip" onclick="toggleSingle(this,'g-brand')">Co logo, chua co guideline</div>
+            <div class="chip" onclick="toggleSingle(this,'g-brand')">Chua co gi</div>
           </div>
         </div>
-        <div class="field">
-          <label class="flbl" for="contact">ThÃ´ng tin liÃªn há»‡</label>
-          <input type="text" id="contact" placeholder="Sá»‘ Zalo / Email cá»§a báº¡n">
-        </div>
-        <div class="nav-row">
-          <button class="nav-back-btn" onclick="goStep(1)">â† Quay láº¡i</button>
-          <button class="nav-next-btn" onclick="goStep(3)">Tiáº¿p theo â†’</button>
-        </div>
+        <div class="field"><label class="flbl">Thong tin lien he</label><input type="text" id="contact" placeholder="So Zalo / Email cua ban"></div>
+        <div class="nav-row"><button class="back-btn" onclick="goStep(1)">&larr; Quay lai</button><button class="next-btn" onclick="goStep(3)">Tiep theo &rarr;</button></div>
       </div>
 
-      <!-- STEP 3 -->
       <div class="panel" id="p3">
         <div class="row2">
-          <div class="field">
-            <label class="flbl" for="quantity">Sá»‘ lÆ°á»£ng / Khá»‘i lÆ°á»£ng</label>
-            <input type="text" id="quantity" placeholder="1 poster, bá»™ 10 post...">
-          </div>
-          <div class="field">
-            <label class="flbl" for="deadline">Deadline mong muá»‘n</label>
-            <input type="text" id="deadline" placeholder="30/06, trong 1 tuáº§n...">
-          </div>
+          <div class="field"><label class="flbl">So luong</label><input type="text" id="quantity" placeholder="1 poster, bo 10 post..."></div>
+          <div class="field"><label class="flbl">Deadline</label><input type="text" id="deadline" placeholder="30/06, trong 1 tuan..."></div>
         </div>
         <div class="field">
-          <span class="flbl">Má»©c Ä‘á»™ gáº¥p</span>
-          <div class="chip-group" id="g-urgent">
-            <div class="chip" onclick="toggleSingle(this,'g-urgent')">BÃ¬nh thÆ°á»ng</div>
-            <div class="chip" onclick="toggleSingle(this,'g-urgent')">HÆ¡i gáº¥p</div>
-            <div class="chip" onclick="toggleSingle(this,'g-urgent')">Ráº¥t gáº¥p (rush)</div>
+          <span class="flbl">Muc do gap</span>
+          <div class="chips" id="g-urgent">
+            <div class="chip" onclick="toggleSingle(this,'g-urgent')">Binh thuong</div>
+            <div class="chip" onclick="toggleSingle(this,'g-urgent')">Hoi gap</div>
+            <div class="chip" onclick="toggleSingle(this,'g-urgent')">Rat gap (rush)</div>
           </div>
         </div>
-        <div class="field">
-          <label class="flbl" for="ref">Phong cÃ¡ch / Tham kháº£o</label>
-          <span class="fsub">Link, tÃªn thÆ°Æ¡ng hiá»‡u hoáº·c mÃ´ táº£ visual báº¡n thÃ­ch</span>
-          <textarea id="ref" placeholder="VÃ­ dá»¥: Phong cÃ¡ch tá»‘i giáº£n nhÆ° Apple, mÃ u áº¥m nhÆ° Kinfolk magazine..."></textarea>
-        </div>
-        <div class="field">
-          <label class="flbl" for="note">Ghi chÃº thÃªm</label>
-          <textarea id="note" placeholder="Ná»™i dung cáº§n Ä‘Æ°a vÃ o, yÃªu cáº§u Ä‘áº·c biá»‡t, format file cáº§n xuáº¥t..."></textarea>
-        </div>
-        <div class="nav-row">
-          <button class="nav-back-btn" onclick="goStep(2)">â† Quay láº¡i</button>
-          <button class="nav-next-btn" onclick="goStep(4)">Xem tÃ³m táº¯t â†’</button>
-        </div>
+        <div class="field"><label class="flbl">Phong cach tham khao</label><span class="fsub">Link, ten thuong hieu hoac mo ta visual ban thich</span><textarea id="ref" placeholder="Vi du: toi gian nhu Apple, mau am nhu Kinfolk..."></textarea></div>
+        <div class="field"><label class="flbl">Ghi chu them</label><textarea id="note" placeholder="Noi dung can dua vao, yeu cau dac biet, format file can xuat..."></textarea></div>
+        <div class="nav-row"><button class="back-btn" onclick="goStep(2)">&larr; Quay lai</button><button class="next-btn" onclick="goStep(4)">Xem tom tat &rarr;</button></div>
       </div>
 
-      <!-- STEP 4 -->
       <div class="panel" id="p4">
-        <div class="sum-card" id="sum-content"></div>
-        <div class="est-row">
-          <div>
-            <div class="est-lbl">Æ¯á»›c tÃ­nh bÃ¡o giÃ¡</div>
-            <div style="font-size:11px;color:#888;margin-top:2px">XÃ¡c nháº­n chÃ­nh xÃ¡c trong 24 giá»</div>
-          </div>
-          <div class="est-val" id="est-price">â€”</div>
-        </div>
-        <div class="nav-row">
-          <button class="nav-back-btn" onclick="goStep(3)">â† Chá»‰nh sá»­a</button>
-          <button class="nav-next-btn accent" onclick="submitBrief()">Gá»­i Brief â†’</button>
-        </div>
+        <div class="sum-box" id="sum-content"></div>
+        <div class="est-box"><div><div class="est-lbl">Uoc tinh bao gia</div><div style="font-size:11px;color:#666;margin-top:2px">Xac nhan chinh xac trong 24 gio</div></div><div class="est-val" id="est-price">&mdash;</div></div>
+        <div class="nav-row"><button class="back-btn" onclick="goStep(3)">&larr; Chinh sua</button><button class="next-btn" onclick="submitBrief()">Gui Brief &rarr;</button></div>
       </div>
 
-      <!-- SUCCESS -->
-      <div class="success-box" id="success">
-        <div class="success-icon">âœ“</div>
-        <div class="success-title">Brief Ä‘Ã£ sáºµn sÃ ng!</div>
-        <div class="success-sub">Copy ná»™i dung bÃªn dÆ°á»›i vÃ  gá»­i qua Zalo / Email cho Justin.</div>
+      <div class="success" id="success">
+        <div class="success-icon">&#10003;</div>
+        <div class="success-title">Brief da san sang!</div>
+        <div class="success-sub">Copy noi dung duoi day va gui qua Zalo / Email cho Justin.</div>
         <div class="copy-block" id="brief-text"></div>
-        <button class="copy-btn" onclick="copyBrief()">Sao chÃ©p ná»™i dung</button>
-        <button class="zalo-btn" onclick="sendZalo()">Má»Ÿ Zalo Ä‘á»ƒ gá»­i</button>
+        <button class="copy-btn" onclick="copyBrief()">Sao chep noi dung</button>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Justin PhÃ³</div>
-  <div>Brand Visual Designer Â· BiÃªn HÃ²a, VN</div>
-  <div>Â© 2025</div>
+  <div class="footer-logo">Justin <span>Pho</span></div>
+  <div>Brand Visual Designer &middot; Bien Hoa, VN</div>
+  <div>&copy; 2025</div>
 </footer>
 
 <script>
-  const priceMap = {
-    'Poster / Banner':'800.000Ä‘','Menu nhÃ  hÃ ng':'1.500.000Ä‘',
-    'Social Media Post':'400.000Ä‘','Social Media Package':'3.000.000Ä‘',
-    'Banner Quáº£ng CÃ¡o':'1.200.000Ä‘','Brochure / Catalogue':'2.500.000Ä‘',
-    'Pitch Deck':'3.500.000Ä‘','Company Profile':'4.500.000Ä‘',
-    'Logo':'3.000.000Ä‘','Bá»™ nháº­n diá»‡n':'8.000.000Ä‘',
-    'Packaging':'3.000.000Ä‘','Infographic':'1.800.000Ä‘','Namecard':'600.000Ä‘'
-  };
-
-  function toggleChip(el){ el.classList.toggle('sel'); }
-  function toggleSingle(el, gid){
-    document.getElementById(gid).querySelectorAll('.chip').forEach(c => c.classList.remove('sel'));
-    el.classList.add('sel');
-  }
-  function getChips(id){
-    const sel = [...document.getElementById(id).querySelectorAll('.chip.sel')].map(c=>c.textContent);
-    return sel.length ? sel.join(', ') : 'â€”';
-  }
-  function v(id){ return document.getElementById(id).value.trim() || 'â€”'; }
-
-  function goStep(n){
-    if(n===4) buildSummary();
-    [1,2,3,4].forEach(i => {
-      document.getElementById('p'+i).classList.toggle('active', i===n);
-      const t = document.getElementById('t'+i);
-      t.classList.toggle('active', i===n);
-      t.classList.toggle('done', i<n);
-    });
-    document.getElementById('pbar').style.width = (n*25)+'%';
-    document.getElementById('brief').scrollIntoView({behavior:'smooth', block:'start'});
-  }
-
-  function buildSummary(){
-    const svc = getChips('g-service');
-    const urg = getChips('g-urgent');
-    const rows = [
-      ['Háº¡ng má»¥c', svc],
-      ['Má»¥c Ä‘Ã­ch', getChips('g-purpose')],
-      ['ThÆ°Æ¡ng hiá»‡u', v('brand-name')],
-      ['NgÃ nh hÃ ng', v('industry')],
-      ['MÃ´ táº£ thÆ°Æ¡ng hiá»‡u', v('brand-desc')],
-      ['Nháº­n diá»‡n hiá»‡n cÃ³', getChips('g-brand')],
-      ['LiÃªn há»‡', v('contact')],
-      ['Sá»‘ lÆ°á»£ng', v('quantity')],
-      ['Deadline', v('deadline')],
-      ['Má»©c Ä‘á»™ gáº¥p', urg],
-      ['Phong cÃ¡ch tham kháº£o', v('ref')],
-      ['Ghi chÃº', v('note')]
-    ];
-    document.getElementById('sum-content').innerHTML = rows.map(([l,val]) =>
-      `<div class="sum-row"><span class="sum-lbl">${l}</span><span class="sum-val">${val}</span></div>`
-    ).join('');
-    const selected = [...document.getElementById('g-service').querySelectorAll('.chip.sel')].map(c=>c.textContent);
-    let est = 'LiÃªn há»‡ Ä‘á»ƒ bÃ¡o giÃ¡';
-    if(selected.length===1 && priceMap[selected[0]]){
-      est = 'Tá»« ' + priceMap[selected[0]];
-      if(urg.includes('rush')) est += ' + phá»¥ thu rush';
-    } else if(selected.length > 1){
-      est = 'Combo â€” bÃ¡o giÃ¡ riÃªng';
-    }
-    document.getElementById('est-price').textContent = est;
-  }
-
-  let briefContent = '';
-  function submitBrief(){
-    const svc = getChips('g-service');
-    const pur = getChips('g-purpose');
-    const brand = v('brand-name');
-    const industry = v('industry');
-    const bdesc = v('brand-desc');
-    const brandStatus = getChips('g-brand');
-    const contact = v('contact');
-    const qty = v('quantity');
-    const dl = v('deadline');
-    const urg = getChips('g-urgent');
-    const ref = v('ref');
-    const note = v('note');
-
-    briefContent = `BRIEF Dá»° ÃN THIáº¾T Káº¾
-${'â”€'.repeat(30)}
-Hº¡ng má»¥c: ${svc}
-Má»¥c Ä‘Ã­ch: ${pur}
-${'â”€'.repeat(30)}
-ThÆ°Æ¡ng hiá»‡u: ${brand}
-NgÃ nh hÃ ng: ${industry}
-MÃ´ táº£: ${bdesc}
-Nháº­n diá»‡n hiá»‡n cÃ³: ${brandStatus}
-${'â”€'.repeat(30)}
-Sá»‘ lÆ°á»£ng: ${qty}
-Deadline: ${dl}
-Má»©c Ä‘á»™ gáº¥p: ${urg}
-Phong cÃ¡ch: ${ref}
-Ghi chÃº: ${note}
-${'â”€'.repeat(30)}
-LiÃªn há»‡: ${contact}`;
-
-    document.getElementById('brief-text').textContent = briefContent;
-    [1,2,3,4].forEach(i => {
-      document.getElementById('p'+i).style.display='none';
-      document.getElementById('t'+i).style.display='none';
-    });
-    document.getElementById('pbar').style.width='100%';
-    document.getElementById('success').style.display='block';
-  }
-
-  function copyBrief(){
-    navigator.clipboard.writeText(briefContent).then(()=>{
-      const btn = document.querySelector('.copy-btn');
-      btn.textContent = 'âœ“ ÄÃ£ sao chÃ©p!';
-      setTimeout(()=>{ btn.textContent = 'Sao chÃ©p ná»™i dung'; }, 2000);
-    }).catch(()=>{
-      const ta = document.createElement('textarea');
-      ta.value = briefContent;
-      document.body.appendChild(ta);
-      ta.select(); document.execCommand('copy');
-      document.body.removeChild(ta);
-    });
-  }
-
-  function sendZalo(){
-    const encoded = encodeURIComponent(briefContent);
-    window.open('https://zalo.me/0000000000?text='+encoded, '_blank');
-  }
+const priceMap={'Poster / Banner':'800.000d','Menu nha hang':'1.500.000d','Social Media Post':'400.000d','Social Media Package':'3.000.000d','Banner Quang Cao':'1.200.000d','Brochure / Catalogue':'2.500.000d','Pitch Deck':'3.500.000d','Company Profile':'4.500.000d','Logo':'3.000.000d','Bo nhan dien':'8.000.000d','Packaging':'3.000.000d','Infographic':'1.800.000d','Namecard':'600.000d'};
+function toggleChip(el){el.classList.toggle('sel')}
+function toggleSingle(el,gid){document.getElementById(gid).querySelectorAll('.chip').forEach(c=>c.classList.remove('sel'));el.classList.add('sel')}
+function getChips(id){const s=[...document.getElementById(id).querySelectorAll('.chip.sel')].map(c=>c.textContent);return s.length?s.join(', '):'---'}
+function v(id){return document.getElementById(id).value.trim()||'---'}
+function goStep(n){
+  if(n===4)buildSummary();
+  [1,2,3,4].forEach(i=>{
+    document.getElementById('p'+i).classList.toggle('active',i===n);
+    const t=document.getElementById('t'+i);
+    t.classList.toggle('active',i===n);
+    t.classList.toggle('done',i<n);
+  });
+  document.getElementById('pbar').style.width=(n*25)+'%';
+  document.getElementById('brief').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function buildSummary(){
+  const svc=getChips('g-service'),urg=getChips('g-urgent');
+  const rows=[['Hang muc',svc],['Muc dich',getChips('g-purpose')],['Thuong hieu',v('brand-name')],['Nganh hang',v('industry')],['Mo ta',v('brand-desc')],['Nhan dien',getChips('g-brand')],['Lien he',v('contact')],['So luong',v('quantity')],['Deadline',v('deadline')],['Muc do gap',urg],['Phong cach',v('ref')],['Ghi chu',v('note')]];
+  document.getElementById('sum-content').innerHTML=rows.map(([l,val])=>`<div class="sum-row"><span class="sum-lbl">${l}</span><span class="sum-val">${val}</span></div>`).join('');
+  const sel=[...document.getElementById('g-service').querySelectorAll('.chip.sel')].map(c=>c.textContent);
+  let est='Lien he de bao gia';
+  if(sel.length===1&&priceMap[sel[0]])est='Tu '+priceMap[sel[0]]+(urg.includes('rush')?' + phu thu rush':'');
+  else if(sel.length>1)est='Combo - bao gia rieng';
+  document.getElementById('est-price').textContent=est;
+}
+let briefContent='';
+function submitBrief(){
+  briefContent='BRIEF DU AN THIET KE\n'+'='.repeat(30)+'\nHang muc: '+getChips('g-service')+'\nMuc dich: '+getChips('g-purpose')+'\n'+'-'.repeat(30)+'\nThuong hieu: '+v('brand-name')+'\nNganh hang: '+v('industry')+'\nMo ta: '+v('brand-desc')+'\nNhan dien: '+getChips('g-brand')+'\n'+'-'.repeat(30)+'\nSo luong: '+v('quantity')+'\nDeadline: '+v('deadline')+'\nMuc do gap: '+getChips('g-urgent')+'\nPhong cach: '+v('ref')+'\nGhi chu: '+v('note')+'\n'+'-'.repeat(30)+'\nLien he: '+v('contact');
+  document.getElementById('brief-text').textContent=briefContent;
+  [1,2,3,4].forEach(i=>{document.getElementById('p'+i).style.display='none';document.getElementById('t'+i).style.display='none'});
+  document.getElementById('pbar').style.width='100%';
+  document.getElementById('success').style.display='block';
+}
+function copyBrief(){
+  navigator.clipboard.writeText(briefContent).then(()=>{const b=document.querySelector('.copy-btn');b.textContent='Copied!';setTimeout(()=>{b.textContent='Sao chep noi dung'},2000)}).catch(()=>{const ta=document.createElement('textarea');ta.value=briefContent;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta)});
+}
 </script>
 </body>
 </html>
